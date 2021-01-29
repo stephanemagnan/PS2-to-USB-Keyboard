@@ -62,8 +62,10 @@ Tested with the following controllers:
 /****************** WIRING DIAGRAM ******************/
 
 / *** WIRING DIAGRAM: TEENSY 3.6 (with external power supply) ***/
+
 Notes: 
 - Teensy 3.6 is a 3.3V logic microcontroller. 5V power can be provided to the board's Vin pin, but Vusb to Vin connection on the back of the board must be severed.
+- you may not need an external power supply, but I had one set up wo I was using it. I did not test without. Your computer's USB port may provide sufficient amperage.
 
 PIN gnd TO: pin 4 [gnd] on ps2 controllers 1 and 2, power supply ground
 PIN 23 TO: pin 2 [command] on ps2 controllers 1 and 2
