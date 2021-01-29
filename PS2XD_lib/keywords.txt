@@ -1,0 +1,59 @@
+#######################################
+# Syntax Coloring Map PS2X
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PS2XD	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+Button	KEYWORD2
+ButtonDataByte	KEYWORD2
+NewButtonState	KEYWORD2
+ButtonPressed	KEYWORD2
+ButtonReleased	KEYWORD2
+read_gamepad	KEYWORD2
+config_gamepad	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+PSB1_SELECT	LITERAL1
+PSB1_L3	LITERAL1
+PSB1_R3	LITERAL1
+PSB1_START	LITERAL1
+PSB1_PAD_UP	LITERAL1
+PSB1_PAD_RIGHT	LITERAL1
+PSB1_PAD_DOWN	LITERAL1
+PSB1_PAD_LEFT	LITERAL1
+PSB1_L2	LITERAL1
+PSB1_R2	LITERAL1
+PSB1_L1	LITERAL1
+PSB1_R1	LITERAL1
+PSB1_TRIANGLE	LITERAL1
+PSB1_CIRCLE	LITERAL1
+PSB1_CROSS	LITERAL1
+PSB1_SQUARE	LITERAL1
+
+PSB2_SELECT	LITERAL1
+PSB2_L3	LITERAL1
+PSB2_R3	LITERAL1
+PSB2_START	LITERAL1
+PSB2_PAD_UP	LITERAL1
+PSB2_PAD_RIGHT	LITERAL1
+PSB2_PAD_DOWN	LITERAL1
+PSB2_PAD_LEFT	LITERAL1
+PSB2_L2	LITERAL1
+PSB2_R2	LITERAL1
+PSB2_L1	LITERAL1
+PSB2_R1	LITERAL1
+PSB2_TRIANGLE	LITERAL1
+PSB2_CIRCLE	LITERAL1
+PSB2_CROSS	LITERAL1
+PSB2_SQUARE	LITERAL1
+
+
