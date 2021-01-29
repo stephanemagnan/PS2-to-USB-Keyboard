@@ -67,14 +67,15 @@ Notes:
 - Teensy 3.6 is a 3.3V logic microcontroller. 5V power can be provided to the board's Vin pin, but Vusb to Vin connection on the back of the board must be severed.
 - you may not need an external power supply, but I had one set up wo I was using it. I did not test without. Your computer's USB port may provide sufficient amperage.
 
-PIN gnd TO: pin 4 [gnd] on ps2 controllers 1 and 2, power supply ground
-PIN 23 TO: pin 2 [command] on ps2 controllers 1 and 2
-PIN 22 TO: pin 1 [data] on ps2 controller 1
-PIN 21 TO: pin 2 [data] on ps2 controller 2 [connect to 3.3V if only using one controller]
-PIN 29 TO: pin 6 [attention] on ps2 controllers 1 and 2
-PIN 30 TO: pin 7 [clock] on ps2 controllers 1 and 2
-PIN Vin TO: 5V external supply
-PIN 3.3V TO: pin 5 [power] on ps2 controllers 1 and 2
+Wiring:
+- PIN gnd TO: pin 4 [gnd] on ps2 controllers 1 and 2, power supply ground
+- PIN 23 TO: pin 2 [command] on ps2 controllers 1 and 2
+- PIN 22 TO: pin 1 [data] on ps2 controller 1
+- PIN 21 TO: pin 2 [data] on ps2 controller 2 [connect to 3.3V if only using one controller]
+- PIN 29 TO: pin 6 [attention] on ps2 controllers 1 and 2
+- PIN 30 TO: pin 7 [clock] on ps2 controllers 1 and 2
+- PIN Vin TO: 5V external supply
+- PIN 3.3V TO: pin 5 [power] on ps2 controllers 1 and 2
 
 /****************** INSTALLATION INSTRUCTIONS *****************/
 
@@ -99,23 +100,38 @@ There are a few options for you if you want to debug the software or are having 
 
 2. Enable internal status to Serial Monitor output (controller signals sent and received) from the PS2xd_lib.h file
 Change: 
+
 //#define PS2XD_DEBUG
+
 //#define PS2XD_COM_DEBUG
+
 To:
+
 #define PS2XD_DEBUG
+
 #define PS2XD_COM_DEBUG
 
+
 Note: the program always sends the command string: 
+
 BTYE    SENT  RECEIVED
+
  01     0x01    0xFF
+ 
  02     0x42    0x41
- 03     0xFF    0x5A    
+ 
+ 03     0xFF    0x5A   
+ 
  04     0xFF    DATA1   
+ 
  05     0xFF    DATA2   
  
 where: 
+
         Bit0 Bit1 Bit2 Bit3 Bit4 Bit5 Bit6 Bit7
+        
 DATA1   SLCT  L3   R3  STRT UP   RGHT DOWN LEFT
+
 DATA     L2   R2    L1  R1   /\   O    X    []
 
 3. Run the "verbose_example" example sketch that enables Serial Monitor output of interpreted key strokes (such as Start, Select, etc.)
@@ -124,14 +140,21 @@ This example basically converts the hex output from "PS2XD_DEBUG" to more easily
 
 4. Some controllers have specific buttons that do not work well (or are registered as repeated presses). You may have to comment out specific keystrokes.
 for example, I had to comment out this line:
+
 ps2xd1_keys_pressed = assignKeyboardKey(ps2xd1_state_select,    PS2XD1_KEY_SELECT,      ps2xd1_keys_pressed, 0);
+
 by changing it to:
+
 //ps2xd1_keys_pressed = assignKeyboardKey(ps2xd1_state_select,    PS2XD1_KEY_SELECT,      ps2xd1_keys_pressed, 0);
+
 because my DDR Pad select key was sending keystrokes when it wasn't being pressed.
 
 5. The timing of commands sent to the PS2 controller seems to be a really big factor. The following lines in the PS2xd_lib.h file may need to be tweaked for your controller.
+
   #define CTRL_CLK        20
+  
   #define CTRL_BYTE_DELAY 10
+  
   #define CTRL_CLK_HIGH   5
   
   If you find other values that work better, let me know and I will update this page.
