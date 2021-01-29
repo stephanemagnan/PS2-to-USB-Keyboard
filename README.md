@@ -128,26 +128,26 @@ BTYE    SENT  RECEIVED
  
 where: 
 
-        Bit0 Bit1 Bit2 Bit3 Bit4 Bit5 Bit6 Bit7
+Bit num     Bit0 Bit1 Bit2 Bit3 Bit4 Bit5 Bit6 Bit7
         
 DATA1   SLCT  L3   R3  STRT UP   RGHT DOWN LEFT
 
 DATA     L2   R2    L1  R1   /\   O    X    []
 
 3. Run the "verbose_example" example sketch that enables Serial Monitor output of interpreted key strokes (such as Start, Select, etc.)
-This code has no keyboard functions enables, so you can run it as a Serial type from the Arduino IDE.
-This example basically converts the hex output from "PS2XD_DEBUG" to more easily interpreted values.
+  This code has no keyboard functions enables, so you can run it as a Serial type from the Arduino IDE.
+  This example basically converts the hex output from "PS2XD_DEBUG" to more easily interpreted values.
 
 4. Some controllers have specific buttons that do not work well (or are registered as repeated presses). You may have to comment out specific keystrokes.
 for example, I had to comment out this line:
 
-ps2xd1_keys_pressed = assignKeyboardKey(ps2xd1_state_select,    PS2XD1_KEY_SELECT,      ps2xd1_keys_pressed, 0);
+  ps2xd1_keys_pressed = assignKeyboardKey(ps2xd1_state_select,    PS2XD1_KEY_SELECT,      ps2xd1_keys_pressed, 0);
 
-by changing it to:
+  by changing it to:
 
-//ps2xd1_keys_pressed = assignKeyboardKey(ps2xd1_state_select,    PS2XD1_KEY_SELECT,      ps2xd1_keys_pressed, 0);
+  //ps2xd1_keys_pressed = assignKeyboardKey(ps2xd1_state_select,    PS2XD1_KEY_SELECT,      ps2xd1_keys_pressed, 0);
 
-because my DDR Pad select key was sending keystrokes when it wasn't being pressed.
+  because my DDR Pad select key was sending keystrokes when it wasn't being pressed.
 
 5. The timing of commands sent to the PS2 controller seems to be a really big factor. The following lines in the PS2xd_lib.h file may need to be tweaked for your controller.
 
