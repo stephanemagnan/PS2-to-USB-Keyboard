@@ -5,6 +5,7 @@ Version 0.1
 The purpose of this project was to develop a PS2 controller to computer keyboard input converter with primary use of connecting two PS2 Dance Dance Revolution (DDR) dance mats to a computer (mac or PC) to play StepMania (open source version of DDR).  Digital buttons on the  PS2 controller are mapped to customizable keyboard inputs. In StepMania, the user can assign these key presses to specific inputs (i.e., W_KEY interpretted as P1 UP). This library also works with some PS2 controllers to read button presses as digital inputs, but I had limited success when using Official Sony PS2 controllers. 
 
 /****************** REFRENCES AND ORIGINAL SOURCE CODE ******************/
+
 This library is a modified version of the Arduino PS2x (v1.8) library (https://github.com/madsci1016/Arduino-PS2X) with the following major changes:
 - Exclusively supports digital mode in the controllers (controllers default to digital when plugged in)
 - Allows two controllers to be used simultaneously
@@ -28,9 +29,11 @@ This project would not have happened without the hard work done by several key c
   - http://www.emulatronia.com/reportajes/directpad/psxeng/index.htm 
 
 /****************** License ******************/
+
 GNU General Public License - see License file.
 
 /****************** REQUIRED COMPONENTS ******************/
+
 - Teensy 3.6 Microcontroller (can be bought with pins already soldred if you don't have soldering equipment)
   - Other boards may also work (no guarantees, I only had this one to play with)
   - Recommended 3.3V logic level, people suggest PS2 controllers can run on 5V but I didn't try it. (Try 5V at your own risk).
@@ -47,6 +50,7 @@ GNU General Public License - see License file.
 - Soldering iron (unless components are purchased with pins already in place)
 
 /****************** COMPATIBLE CONTROLLERS ******************/
+
 Tested with the following controllers:
 - Official Sony PS2 controllers
   - mixed success, mostly poor. Usually only half of controller worked
@@ -56,6 +60,7 @@ Tested with the following controllers:
   - worked well, my mats had problems with the select key, so I stopped reading those values and assigned its functionality to the O button.
 
 /****************** WIRING DIAGRAM ******************/
+
 / *** WIRING DIAGRAM: TEENSY 3.6 (with external power supply) ***/
 Notes: 
 - Teensy 3.6 is a 3.3V logic microcontroller. 5V power can be provided to the board's Vin pin, but Vusb to Vin connection on the back of the board must be severed.
@@ -69,8 +74,8 @@ PIN 30 TO: pin 7 [clock] on ps2 controllers 1 and 2
 PIN Vin TO: 5V external supply
 PIN 3.3V TO: pin 5 [power] on ps2 controllers 1 and 2
 
-
 /****************** INSTALLATION INSTRUCTIONS *****************/
+
 You need:
 - Arduino IDE
   - https://www.arduino.cc/en/software
@@ -84,6 +89,7 @@ When running, you need to select a communication mode that includes Serial (if y
 
 
 /****************** DEBUGGING INSTRUCTIONS ******************/
+
 There are a few options for you if you want to debug the software or are having trouble with the library.
 
 1. Although it has been modified heavily, the comments and discussions from the original Arduino PS2x_lib really helped me figure out this project (lots of pages of comments):
