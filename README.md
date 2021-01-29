@@ -1,4 +1,4 @@
-# PS2xd-lib
+# PS2XD-lib
 PS2 Controller (digital mode) to USB Keyboard using a microcontroller [compatible with two simultaneous PS2 controllers]
 Version 0.1
 
