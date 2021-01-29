@@ -134,7 +134,7 @@ DATA1   SLCT  L3   R3  STRT UP   RGHT DOWN LEFT
 
 DATA     L2   R2    L1  R1   /\   O    X    []
 
-3. Run the "verbose_example" example sketch that enables Serial Monitor output of interpreted key strokes (such as Start, Select, etc.)
+3. Run the "PS2_read_verbose" example sketch that enables Serial Monitor output of interpreted key strokes (such as Start, Select, etc.)
   This code has no keyboard functions enables, so you can run it as a Serial type from the Arduino IDE.
   This example basically converts the hex output from "PS2XD_DEBUG" to more easily interpreted values.
 
